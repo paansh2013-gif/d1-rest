@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "ansh",
+          "database_id": "b0b7568f-0122-4484-a2b7-98cb14047a48"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "fb5375c8b00a4b2fa8abad1ec6c16571",
+            "binding": "SECRET",
+            "secret_name": "GITHUB_TOKEN"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
